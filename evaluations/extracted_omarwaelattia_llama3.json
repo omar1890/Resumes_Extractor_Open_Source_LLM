@@ -1,59 +1,8 @@
 {
-  "Full Name": "OMAR WAEL ATTIA",
+  "Full Name": "Omar Wael Attia",
   "Email": "",
   "Phone Number": "+201021186028",
-  "Education": [
-    {
-      "Degree": "Master Computer Science and AI",
-      "Institution": "Faculty of Science - Cairo University",
-      "Duration": "10/2024 - Ongoing"
-    },
-    {
-      "Degree": "Postgraduate Diploma of Artificial Intelligence (AI)",
-      "Institution": "Information Technology Institute (ITI), Cairo, Egypt & School of Engineering and Computer Science (EPITA), Paris, France",
-      "Duration": "04/2021 \u2013 12/2021"
-    },
-    {
-      "Degree": "BSc: Computer Science",
-      "Institution": "Faculty of Science - Cairo University",
-      "Duration": "09/2014 - 06/2019"
-    }
-  ],
-  "Work Experience": [
-    {
-      "Job Title": "Data Scientist",
-      "Company": "Data Gear Company",
-      "Duration": "06/2022 \u2013 current position   Cairo \u2013 Hybrid",
-      "Description": "Enhanced ML solutions for Anti-Money Laundering (AML) systems used by international banks. Streamlined data collection from diverse sources to improve model accuracy. Developed supervised and unsupervised models for AML solutions."
-    },
-    {
-      "Job Title": "Research Assistant",
-      "Company": "The American University in Cairo (AUC)",
-      "Duration": "06/2022 \u2013 current position   Cairo",
-      "Description": "Conducted research on requirement engineering using LLMs for business management. Contributed to academic papers and presentations."
-    },
-    {
-      "Job Title": "Teaching Assistant",
-      "Company": "The American University in Cairo (AUC)",
-      "Duration": "01/2022 \u2013 06/2024  Cairo",
-      "Description": "Led hands-on sessions for key courses: Data Mining, Big Data, Data Visualization, and Practical Data Science. Trained students on Python, Hadoop, Spark, Hive, Power BI, and Tableau."
-    },
-    {
-      "Job Title": "Software Engineer",
-      "Company": "Phantasm Solutions",
-      "Duration": "12/2020 \u2013 05/2022   Remotely",
-      "Description": "Spearheaded the development of payment integrations (Google/Apple Pay, Stripe). Actively contributed to feature development and bug resolution across web applications."
-    }
-  ],
-  "Skills": [
-    "Machine Learning: Scikit-learn, Pandas, Numpy",
-    "Deep Learning: TensorFlow, CNN, NLP, Recommender Systems , LLM",
-    "Data Visualization: Matplotlib, Seaborn, Dash, Plotly, Tableau, Power BI",
-    "Programming Languages: Python, Java, PHP",
-    "Databases: SQL (MySQL, Oracle, SQL Server), NoSQL (MongoDB, Cassandra)",
-    "Big Data: Hadoop, Apache Spark, ML H2O",
-    "Cloud Platforms: AWS, GCP, Digital Ocean",
-    "Web Frameworks: Django, Laravel, Flask",
-    "Other Tools: Docker, Git, CI/CD Pipelines"
-  ]
+  "Education": "{'Degree': 'Master in Computer Science and AI', 'Institution': 'Faculty of Science - Cairo University', 'Duration': '10/2024 - Ongoing'} {'Degree': 'Postgraduate Diploma in Artificial Intelligence (AI)', 'Institution': 'Information Technology Institute (ITI), Cairo, Egypt & School of Engineering and Computer Science (EPITA), Paris, France', 'Duration': '04/2021 \u2013 12/2021'} {'Degree': 'BSc: Computer Science', 'Institution': 'Faculty of Science - Cairo University', 'Duration': '09/2014  - 06/2019'}",
+  "Work Experience": "{'Job Title': 'Data Scientist', 'Company': 'Data Gear Company', 'Duration': '06/2022  \u2013 current position   Cairo \u2013 Hybrid'} {'Job Title': 'Research Assistant', 'Company': 'The American University in Cairo (AUC)', 'Duration': '06/2022  \u2013 current position   Cairo'} {'Job Title': 'Teaching Assistant', 'Company': 'The American University in Cairo (AUC)', 'Duration': '01/2022  \u2013 06/2024  Cairo'} {'Job Title': 'Software Engineer', 'Company': 'Phantasm Solutions', 'Duration': '12/2020 \u2013 05/2022   Remotely'}",
+  "Skills": "Machine Learning: Scikit-learn, Pandas, Numpy Deep Learning: TensorFlow, CNN, NLP, Recommender Systems , LLM Data Visualization: Matplotlib, Seaborn, Dash, Plotly, Tableau, Power BI Programming Languages: Python, Java, PHP Databases: SQL (MySQL, Oracle, SQL Server), NoSQL (MongoDB, Cassandra) Big Data: Hadoop, Apache Spark, ML H2O Cloud Platforms: AWS, GCP, Digital Ocean Web Frameworks: Django, Laravel, Flask Other Tools: Docker, Git, CI/CD Pipelines"
 }

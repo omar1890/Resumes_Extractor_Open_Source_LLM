@@ -1,10 +1,45 @@
 import os
 import requests
-from dotenv import load_dotenv
 import json
+import re
+from dotenv import load_dotenv
 
 load_dotenv(override=True)
 OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
+
+
+def sanitize_raw_output(text: str) -> str:
+    """
+    Clean LLM output for parsing:
+    - Removes markdown wrappers (``` or ```json)
+    - Replaces nulls with empty strings
+    - Fixes common invalid JSON issues (single quotes, trailing commas)
+    """
+    text = text.strip().strip("`")
+    if text.lower().startswith("json"):
+        text = text[4:].strip()
+
+    # Replace Python-style single quotes with double quotes
+    text = re.sub(r"(?<!\\)'", '"', text)
+
+    # Remove trailing commas
+    text = re.sub(r",(\s*[}\]])", r"\1", text)
+
+    # Replace : null with : ""
+    text = re.sub(r':\s*null', ': ""', text)
+
+    return text
+
+
+def parse_model_response(raw_output: str):
+    raw_output = sanitize_raw_output(raw_output)
+
+    try:
+        return json.loads(raw_output)
+    except json.JSONDecodeError as e:
+        print("[ERROR] JSON parsing failed after sanitation:", e)
+        return None
+
 
 def run_model(text, model_name):
     prompt = f"""
@@ -38,21 +73,16 @@ Respond ONLY with valid JSON. Do not include explanations, headers, or markdown.
         )
 
         raw_output = response.json().get("message", {}).get("content", "").strip()
-        print("[DEBUG] Raw Model Output:\n", raw_output)
+        print("=== RAW OUTPUT FROM MODEL ===")
+        print(raw_output)
 
-        if not raw_output:
-            return "Error: Empty response from model."
+        parsed = parse_model_response(raw_output)
 
-        # Try to extract valid JSON even if wrapped in markdown
-        if raw_output.startswith("```"):
-            raw_output = raw_output.strip("`").strip()
-            if raw_output.startswith("json"):
-                raw_output = raw_output[4:].strip()
+        if not parsed:
+            return f"Error: Invalid JSON\n\n{raw_output}"
 
-        return json.loads(raw_output)
+        return parsed
 
-    except json.JSONDecodeError as jde:
-        print("[ERROR] Failed to parse JSON:", jde)
-        return f"Error: Invalid JSON\n\n{raw_output}"
     except Exception as e:
+        print("[ERROR] run_model Exception:", e)
         return f"Error: {e}"

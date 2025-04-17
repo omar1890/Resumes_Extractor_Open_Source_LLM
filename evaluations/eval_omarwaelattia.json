@@ -1,0 +1,12 @@
+{
+  "llama3": {
+    "Precision": 1.0,
+    "Recall": 0.5,
+    "F1 Score": 0.6666666666666666
+  },
+  "mistral": {
+    "Precision": 1.0,
+    "Recall": 0.3333333333333333,
+    "F1 Score": 0.5
+  }
+}

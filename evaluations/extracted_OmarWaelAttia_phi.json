@@ -1,0 +1,34 @@
+Error: Invalid JSON
+
+To extract the structured fields from the CV text, we need to follow these steps:
+
+1. Create a JSON object to store the extracted information.
+2. Parse through the CV text line by line to identify potential structured fields.
+3. Extract the relevant information such as full name, email, phone number, education, work experience, and skills using regular expressions or string manipulation techniques.
+4. Store each piece of information in its respective field within the JSON object.
+5. Repeat this process for all the lines until all fields are extracted.
+6. Return the completed JSON object as the output.
+
+Here is an example of how the structured fields can be extracted from the CV text:
+
+```
+import json
+
+cv_text = """OMAR  WAEL  ATTIA  
+Data Scientist 
+
++2012118628   Omar Wael Website  Giza,  Egypt  
+
+SUMMARY  
+
+Data Scientist and Software Engineer with 
+5+ years of experience in building scalable AI and data-driven solutions. Specializing in machine learning, big data analytics, and backend systems, with a proven track record in anti 
+-money laundering (AML), NLP, and cloud-based solutions. Passionate about bridging the gap between academic research and industry applications, having taught Data Science at AUC and contributed to AI
+research on Large Language Models
+
+EDUCATION  
+Master  Computer  Science  and AI 
+Faculty  of Science  - Cairo  University  
+ 10/20214 
+
+  Completed Pre

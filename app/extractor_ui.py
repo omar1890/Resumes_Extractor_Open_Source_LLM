@@ -33,25 +33,27 @@ def run_ui():
                 st.subheader("📋 Extracted Information")
                 st.code(result)
                 # Derive CV name from uploaded filename
-                cv_name = os.path.splitext(uploaded_file.name)[0].lower().replace(" ", "_")
-                
-                # Save extracted info to file
-                save_extracted_output(cv_name, model_choice, result)
-
+                cv_name = os.path.splitext(uploaded_file.name)[0].replace(" ", "_")
+                print(cv_name)
 
 
                 if evaluate:
                     try:
-                        ground_truth_path = f"data/ground_truth_{cv_name}.json"
-                        with open(ground_truth_path) as f:
-                            ground_truth = json.load(f)
+                        
+                        if isinstance(result, dict):
+                            # Continue evaluation
+                            with open(f"data/ground_truth_{cv_name}.json") as f:
+                                ground_truth = json.load(f)
 
-                        metrics = evaluate_extraction(result, ground_truth)
-                        st.subheader("📊 Evaluation Metrics")
-                        st.json(metrics)
+                            metrics = evaluate_extraction(result, ground_truth)
+                            st.subheader("📊 Evaluation Metrics")
+                            st.json(metrics)
 
-                        # Save the evaluation result per model
-                        save_evaluation_to_file(cv_name, model_choice, metrics)
+                            save_evaluation_to_file(cv_name, model_choice, metrics)
+                            save_extracted_output(cv_name, model_choice, result)
+                        else:
+                            st.warning("Model did not return valid structured output. Skipping evaluation.")
+
 
                     except Exception as e:
                         st.warning(f"Evaluation skipped: {e}")

@@ -2,15 +2,19 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 from difflib import SequenceMatcher
 import json
 import re
-import os 
-
+import os
 def string_similarity(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 def evaluate_extraction(extracted_text, ground_truth, threshold=0.7):
-    extracted = parse_result(extracted_text)
-    fields = ["Full Name", "Email", "Phone Number", "Education", "Work Experience", "Skills"]
+    if isinstance(extracted_text, str):
+        extracted = parse_result(extracted_text)
+    elif isinstance(extracted_text, dict):
+        extracted = extracted_text
+    else:
+        raise ValueError("Extracted output must be a dict or string")
 
+    fields = ["Full Name", "Email", "Phone Number", "Education", "Work Experience", "Skills"]
     y_true = []
     y_pred = []
 
@@ -23,8 +27,8 @@ def evaluate_extraction(extracted_text, ground_truth, threshold=0.7):
         if isinstance(pred, list):
             pred = " ".join(pred)
 
-        gt = str(gt).strip().lower()
-        pred = str(pred).strip().lower()
+        gt = str(gt).strip().lower() if gt else ""
+        pred = str(pred).strip().lower() if pred else ""
 
         sim = string_similarity(gt, pred)
         y_true.append(1)
@@ -53,19 +57,20 @@ def parse_result(text):
 
 def save_evaluation_to_file(cv_name, model_name, metrics, folder="evaluations"):
     os.makedirs(folder, exist_ok=True)
-    eval_path = os.path.join(folder, f"eval_{cv_name}.json")
+    path = os.path.join(folder, f"eval_{cv_name}.json")
 
-    if os.path.exists(eval_path):
-        with open(eval_path, "r") as f:
-            all_results = json.load(f)
+    if os.path.exists(path):
+        with open(path, "r") as f:
+            data = json.load(f)
     else:
-        all_results = {}
+        data = {}
 
-    all_results[model_name] = metrics
+    data[model_name] = metrics
 
-    with open(eval_path, "w") as f:
-        json.dump(all_results, f, indent=2)
-        
+    with open(path, "w") as f:
+        json.dump(data, f, indent=2)
+
+
 def save_extracted_output(cv_name, model_name, output_text, folder="evaluations"):
     os.makedirs(folder, exist_ok=True)
     output_path = os.path.join(folder, f"extracted_{cv_name}_{model_name}.json")

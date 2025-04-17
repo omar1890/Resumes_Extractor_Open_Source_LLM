@@ -1,0 +1,8 @@
+{
+  "Full Name": "OMAR WAEL ATTIA",
+  "Email": "Not provided in the text",
+  "Phone Number": "+201021186028",
+  "Education": "{'Degree': 'Master Computer Science and AI', 'Institution': 'Faculty of Science - Cairo University', 'Start Year': '10/2024', 'End Year': 'Ongoing'} {'Diploma': 'Postgraduate Diploma of Artificial Intelligence (AI)', 'Institution': ['Information Technology Institute (ITI), Cairo, Egypt', 'School of Engineering and Computer Science (EPITA), Paris, France'], 'Duration': '04/2021 \u2013 12/2021'} {'Degree': 'BSc: Computer Science', 'Institution': 'Faculty of Science - Cairo University', 'Start Year': '09/2014', 'End Year': '06/2019'}",
+  "Work Experience": "{'Title': 'Data Scientist', 'Company': 'Data Gear Company', 'Duration': '06/2022  \u2013 current position', 'Location': 'Cairo \u2013 Hybrid'} {'Title': 'Research Assistant', 'Company': 'The American University in Cairo (AUC)', 'Duration': '06/2022  \u2013 current position', 'Location': 'Cairo'} {'Title': 'Teaching Assistant', 'Company': 'The American University in Cairo (AUC)', 'Duration': '01/2022  \u2013 06/2024', 'Location': 'Cairo'} {'Title': 'Software Engineer', 'Company': 'Phantasm Solutions', 'Duration': '12/2020 \u2013 05/2022', 'Location': 'Remotely'}",
+  "Skills": "Machine Learning Big Data Analytics Backend Systems Anti-Money Laundering (AML) NLP Cloud-based Solutions Python Java PHP SQL (MySQL, Oracle, SQL Server) NoSQL (MongoDB, Cassandra) Hadoop Apache Spark ML H2O AWS GCP Digital Ocean Django Laravel Flask Docker Git CI/CD Pipelines"
+}
