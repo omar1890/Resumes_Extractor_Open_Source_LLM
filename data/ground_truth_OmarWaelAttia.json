@@ -1,0 +1,24 @@
+{
+    "Full Name": "Omar Wael Attia",
+    "Email": "omarwaelattia96@gmail.com",
+    "Phone Number": "+201021186028",
+    "Education": "Master in Computer Science and AI (Cairo University), Postgraduate Diploma of AI (ITI/EPITA), BSc in Computer Science (Cairo University)",
+    "Work Experience": [
+      "Data Scientist at Data Gear Company (06/2022 – Present)",
+      "Research Assistant at The American University in Cairo (06/2022 – Present)",
+      "Teaching Assistant at The American University in Cairo (01/2022 – 06/2024)",
+      "Software Engineer at Phantasm Solutions (12/2020 – 05/2022)"
+    ],
+    "Skills": [
+      "Machine Learning: Scikit-learn, Pandas, Numpy",
+      "Deep Learning: TensorFlow, CNN, NLP, Recommender Systems, LLM",
+      "Data Visualization: Matplotlib, Seaborn, Dash, Plotly, Tableau, Power BI",
+      "Programming: Python, Java, PHP",
+      "Databases: MySQL, Oracle, SQL Server, MongoDB, Cassandra",
+      "Big Data: Hadoop, Apache Spark, ML H2O",
+      "Cloud Platforms: AWS, GCP, Digital Ocean",
+      "Web Frameworks: Django, Laravel, Flask",
+      "Other Tools: Docker, Git, CI/CD Pipelines"
+    ]
+  }
+  

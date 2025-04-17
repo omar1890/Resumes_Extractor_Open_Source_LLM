@@ -1,0 +1,6 @@
+streamlit
+ollama
+PyPDF2
+pytesseract
+Pillow
+scikit-learn
